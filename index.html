@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .magazine {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fafafa;
+            border-radius: 32px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+        }
+
+        /* -- 首页横幅 -- */
+        .hero {
+            background: #eae7e3;
+            padding: 3.5rem 2.5rem 4rem;
+            border-bottom: 1px solid #d6d2cb;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #2f2a24;
+            line-height: 1.2;
+            max-width: 700px;
+        }
+
+        .hero .sub {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #5f5951;
+            border-left: 3px solid #bbb2a8;
+            padding-left: 1.2rem;
+            max-width: 480px;
+        }
+
+        /* -- 背景说明 -- */
+        .context {
+            padding: 2.5rem 2.5rem 2rem;
+            background: #f6f4f1;
+            border-bottom: 1px solid #e2ddd7;
+        }
+
+        .context p {
+            font-size: 1.05rem;
+            color: #3d3a35;
+            max-width: 780px;
+            margin-bottom: 0.6rem;
+        }
+
+        .context .stamp {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8a8278;
+            border: 1px solid #cfc8bf;
+            padding: 0.1rem 0.9rem;
+            border-radius: 20px;
+            background: #efece7;
+        }
+
+        /* -- 三段式介绍卡片 -- */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            padding: 2.8rem 2.5rem;
+            background: #fafafa;
+        }
+
+        .card {
+            flex: 1 1 260px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e4dfd8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
+            padding: 1.8rem 1.6rem 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #3a342e;
+            border-bottom: 1px solid #e0d9d0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #4a453e;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card .tag {
+            font-size: 0.75rem;
+            color: #8f867b;
+            background: #f3efe9;
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+
+        /* -- 尾页访问提示 -- */
+        .visit-hint {
+            padding: 2.5rem 2.5rem 3rem;
+            background: #f0ece6;
+            border-top: 1px solid #dbd4cb;
+            text-align: center;
+        }
+
+        .visit-hint p {
+            font-size: 1.05rem;
+            color: #4b443b;
+            max-width: 600px;
+            margin: 0 auto 0.6rem;
+        }
+
+        .visit-hint .sentence {
+            font-size: 1.1rem;
+            color: #2f2a24;
+        }
+
+        .visit-hint a {
+            color: #4e4237;
+            text-decoration: none;
+            border-bottom: 1px solid #b8ae9f;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 400;
+        }
+
+        .visit-hint a:hover {
+            color: #1f1b16;
+            border-bottom-color: #6a5e50;
+        }
+
+        .visit-hint .note {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #7d7368;
+        }
+
+        /* -- 响应式 -- */
+        @media (max-width: 700px) {
+            .hero {
+                padding: 2.2rem 1.5rem 2.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .context, .features, .visit-hint {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .features {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .card {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.8rem;
+            }
+
+            .magazine {
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .visit-hint a {
+                word-break: break-all;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="magazine">
+
+    <!-- 首页横幅 -->
+    <div class="hero">
+        <h1>再次遇见 · 爱游戏</h1>
+        <div class="sub">收藏一段叙事，持续一种关注<br>杂志专题 · 第八十期</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context">
+        <p>几个月前的一个傍晚，我打开书柜顶层，翻出一本旧杂志——封面已微微泛黄，但标题依然清晰：「爱游戏」。那期专题写的是游戏与日常记忆的纠缠，文笔克制，却让人反复回味。从那时起，每次路过报刊亭，我都会下意识地看一眼有没有新的印次。</p>
+        <p>后来才知道，<strong>爱游戏</strong>更是一个持续更新的线上空间。它不追逐热点，不制造焦虑，只是安静地记录、分享那些值得被留意的游戏瞬间。你可以在某个深夜再次打开它，就像翻开一本熟悉的老刊物。</p>
+        <span class="stamp">· 再一次 · 收藏 ·</span>
+    </div>
+
+    <!-- 三段自然介绍（卡片） -->
+    <div class="features">
+
+        <div class="card">
+            <h3>从再次访问开始</h3>
+            <p>有些网站你只去一次，有些你会反复回来。<strong>爱游戏</strong>属于后者。它的首页像一份定期更新的目录，不冗长，不嘈杂。每隔一两周，总会有新的短文、侧记或推荐，让人愿意再点开看看。</p>
+            <p><span class="tag">专栏</span><span class="tag">随笔</span><span class="tag">重访</span></p>
+        </div>
+
+        <div class="card">
+            <h3>收藏，是一种安静的认可</h3>
+            <p>在信息流动过快的时代，收藏变得廉价。但真正值得放进书签的站点并不多。<strong>爱游戏</strong>的每一篇文章都像一本小册子——你可以把它留在收藏夹里，过几个月再读，依旧有温度。它不依赖时效，更依赖叙述本身的分量。</p>
+            <p><span class="tag">书签</span><span class="tag">存档</span><span class="tag">长读</span></p>
+        </div>
+
+        <div class="card">
+            <h3>持续关注，而非紧盯</h3>
+            <p>关注一个网站，不一定要每天刷新。偶尔想起时，去翻翻新内容，反而更有意思。<strong>爱游戏</strong>的更新节奏平缓，像一位不定期写信的老朋友。你不需要时刻在线，只需要知道它一直在那里。</p>
+            <p><span class="tag">节奏</span><span class="tag">陪伴</span><span class="tag">自然</span></p>
+        </div>
+
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="visit-hint">
+        <p class="sentence">如果你也曾路过这里，不妨把 <a href="https://main-zh-i-game.com.cn">爱游戏</a> 加入书签。</p>
+        <p>不是必须每天刷新，而是知道有一个安静的角落，始终等你再次打开。</p>
+        <div class="note">—— 杂志专题 · 第八十期 完 ——</div>
+    </div>
+
+</div>
+</body>
+</html>

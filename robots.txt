@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://toningzun.github.io/main-zh-i-game-com-cn/sitemap.xml
