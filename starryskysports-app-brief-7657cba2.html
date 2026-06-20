@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>星空体育 · 产品说明页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f7f3ed;  /* 米白基调 */
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page {
+            max-width: 800px;
+            width: 100%;
+            background: #fefcf8;
+            border-radius: 28px;
+            padding: 2.8rem 2.2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.6rem; }
+            .page { padding: 2rem 1.2rem; border-radius: 20px; }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.3rem;
+            color: #1f1e1b;
+            border-left: 6px solid #b8a186;
+            padding-left: 1.2rem;
+        }
+        h1 small {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #6f6b63;
+            display: block;
+            margin-top: 0.3rem;
+            letter-spacing: 0.04em;
+        }
+        .subhead {
+            margin: 1rem 0 1.6rem 0;
+            font-size: 1.05rem;
+            color: #5c5750;
+            border-bottom: 1px solid #e5ddd3;
+            padding-bottom: 0.9rem;
+        }
+        .subhead em {
+            font-style: normal;
+            background: #ede7de;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            color: #3f3a33;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 440;
+            margin: 2rem 0 1rem 0;
+            color: #2f2c26;
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 44px;
+            height: 3px;
+            background: #cbb79e;
+            margin-top: 6px;
+            border-radius: 6px;
+        }
+
+        p {
+            margin: 1rem 0;
+            text-align: justify;
+        }
+        a {
+            color: #7f6a4f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cfbeab;
+            transition: color 0.15s;
+        }
+        a:hover {
+            color: #4d3c2a;
+            text-decoration-color: #7f6a4f;
+        }
+
+        .highlight-box {
+            background: #f3eee7;
+            border-left: 5px solid #b8a186;
+            padding: 1.1rem 1.5rem;
+            margin: 1.8rem 0;
+            border-radius: 0 14px 14px 0;
+            color: #3a3730;
+            font-size: 0.98rem;
+        }
+        .highlight-box strong {
+            color: #2c261e;
+            font-weight: 550;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.6rem 0 0.8rem;
+        }
+        .card-item {
+            flex: 1 1 180px;
+            background: #faf7f1;
+            padding: 1.1rem 1.2rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #ece4d9;
+        }
+        .card-item h3 {
+            font-size: 1.1rem;
+            font-weight: 530;
+            margin-bottom: 0.4rem;
+            color: #3d372e;
+        }
+        .card-item p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #4f4a41;
+        }
+
+        .faq-snip {
+            margin: 1.8rem 0 0.6rem;
+            padding: 0.2rem 0;
+        }
+        .faq-snip details {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #dfd6c9;
+            padding-bottom: 8px;
+        }
+        .faq-snip summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #3d372e;
+            padding: 4px 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq-snip summary::before {
+            content: "▸";
+            margin-right: 10px;
+            color: #b8a186;
+            font-size: 1.2rem;
+            transition: transform 0.15s;
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .faq-snip details p {
+            margin: 0.6rem 0 0.4rem 1.8rem;
+            font-size: 0.95rem;
+            color: #4f4a41;
+        }
+
+        .footnote {
+            margin-top: 2.6rem;
+            font-size: 0.85rem;
+            color: #837c72;
+            border-top: 1px solid #e0d6ca;
+            padding-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+        .footnote span {
+            opacity: 0.8;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5ddd3;
+            margin: 1.6rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>
+        星空体育
+        <small>稳定的访问入口与产品说明</small>
+    </h1>
+
+    <div class="subhead">
+        <em>摘要</em> —— 面向日常体育资讯与赛事动态的轻量聚合平台，以简洁的页面结构与稳定的访问路径，为用户提供持续可用的信息入口。
+    </div>
+
+    <p>
+        <a href="https://starryskysports-app.com">星空体育</a> 定位于体育内容的整合与呈现，不强调即时比分或高频推送，而是将赛事预告、选手动态、项目科普等内容组织为清晰的信息流。产品侧重点在于“可预期”——用户每次打开，都能获得结构一致的浏览体验，不会被频繁的弹窗或布局变动打断。
+    </p>
+
+    <div class="highlight-box">
+        <strong>稳定入口，页面优先</strong><br>
+        无论通过移动端浏览器还是桌面浏览器访问，核心页面采用统一的信息层级：导航区、内容摘要区、详细阅读区。没有自适应混乱的广告模块，也没有强制跳转。产品始终将“页面本身”作为主要交互容器。
+    </div>
+
+    <h2>产品亮点</h2>
+    <p>
+        内容编排上，星空体育注重信息的可扫读性。每个分类下只展示标题与一段概要，点击后进入完整页面。这种设计降低了信息过载感，也适合碎片时间浏览。此外，页面加载速度经过基础优化，首屏内容可在 1.5 秒内呈现（基于常规网络环境测算）。
+    </p>
+
+    <div class="card-grid">
+        <div class="card-item">
+            <h3>无追踪式浏览</h3>
+            <p>不部署第三方分析脚本，页面不主动收集用户行为数据。访问记录仅由浏览器本地管理。</p>
+        </div>
+        <div class="card-item">
+            <h3>内容日历化</h3>
+            <p>体育赛事、历史回顾、规则解读等内容按时间线或主题线组织，便于回查。</p>
+        </div>
+        <div class="card-item">
+            <h3>低视觉噪音</h3>
+            <p>米白色背景、无动态背景、克制的高亮色。阅读区域宽度控制在 720px 以内。</p>
+        </div>
+    </div>
+
+    <h2>使用建议</h2>
+    <p>
+        适合作为每日体育资讯的补充阅读渠道：早晨或晚间花 5–10 分钟浏览标题与摘要，遇到感兴趣的话题再进入详情页。由于平台不设置个性化推荐算法，所有内容均按照发布时间或编辑排序陈列，用户可获得更中性的信息流。
+    </p>
+    <p>
+        若您习惯用 RSS 或书签管理信息源，可将 <a href="https://starryskysports-app.com">星空体育</a> 加入浏览器书签栏，或手动配置为浏览器的“新标签页”背景页面（部分浏览器支持）。每次打开即看到最新更新，无需额外订阅。
+    </p>
+
+    <h2>常见疑问简答</h2>
+    <div class="faq-snip">
+        <details>
+            <summary>是否需要注册或登录？</summary>
+            <p>不需要。目前所有公开内容均可直接访问，平台不设会员体系或登录墙。</p>
+        </details>
+        <details>
+            <summary>内容更新频率如何？</summary>
+            <p>通常每个工作日会有至少一次内容更新，周末及大型赛事期间可能增加更新次数。页面上方会显示最近更新时间。</p>
+        </details>
+        <details>
+            <summary>移动端与桌面端体验差异大吗？</summary>
+            <p>两者差异很小。页面采用响应式设计，字体与间距在手机屏幕上会略微放大，但整体结构一致。</p>
+        </details>
+    </div>
+
+    <hr>
+
+    <p style="font-size: 0.95rem; background: #f3eee7; padding: 0.8rem 1.2rem; border-radius: 12px;">
+        <strong>访问说明</strong> —— 星空体育为公开内容站点，无需代理或特殊网络配置。若遇访问延迟，通常与本地网络环境或 DNS 解析有关，可尝试刷新页面或稍后重试。平台不提供加速服务，也不建议使用第三方工具进行强制加速。
+    </p>
+
+    <div class="footnote">
+        <span>内容方向 · 产品说明式</span>
+        <span>页面角色 · 稳定入口介绍</span>
+    </div>
+
+</div>
+</body>
+</html>
